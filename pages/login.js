@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { providers, getSession } from 'next-auth/client'
 import BtnLogin from '../components/BtnLogin'
+import Router from 'next/router'
 
 const Login = ({providers,session}) => {
-    console.log({providers,session})
+    useEffect(() => {
+        if(session) return Router.push('/');
+    },[session])
     if(session) return null;
     return (
         <div className="d-flex justify-content-center align-items-center" style={{ minHeight:'100vh'}}>
