@@ -1,11 +1,12 @@
 import React from 'react'
-import { signOut, getSession } from 'next-auth/client'
+import { getSession } from 'next-auth/client'
+import Nav from '../components/Nav'
 
 const Home = ({session}) => {
   console.log(session)
   return (
     <div>
-      <button onClick = {() => signOut()}>signOut</button>
+      <Nav />
     </div>
   )
 }
